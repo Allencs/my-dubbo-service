@@ -1,7 +1,9 @@
 package com.allen;
 
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+
 
 /**
  * dubbo使用logback
@@ -11,11 +13,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  */
 
 @SpringBootApplication
-public class App 
-{
-    public static void main( String[] args )
-    {
-//        System.out.println( "Hello World!" );
-        SpringApplication.run(App.class, args);
+public class MyDubboService {
+
+    public static void main(String[] args) {
+        SpringApplication.run(MyDubboService.class, args);
     }
 }

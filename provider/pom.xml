@@ -22,6 +22,11 @@
   </properties>
 
   <dependencies>
+    <dependency>
+      <groupId>com.allen</groupId>
+      <artifactId>interface</artifactId>
+      <version>1.0-SNAPSHOT</version>
+    </dependency>
     <!-- Dubbo Spring Boot Starter -->
     <dependency>
       <groupId>org.apache.dubbo</groupId>
