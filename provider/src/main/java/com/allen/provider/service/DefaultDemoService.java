@@ -31,10 +31,13 @@ public class DefaultDemoService implements DemoService {
         personInfo.setJob(job);
         personInfo.setCode(200);
         personInfo.setProtocol("Dubbo");
-        personInfo.setMessage("This is Dubbo Service, MyDubboService-Controller.");
-        System.out.println(personInfo);
+        if (name.equals("TestDubbo")) {
+            personInfo.setMessage("Hello Tester! Everything is OK!");
+        } else {
+            personInfo.setMessage("This is Dubbo Service --> [Query PersonInfo]");
+        }
         URL url = RpcContext.getContext().getUrl();
-        System.out.println(url);
+        System.out.println("Request Url --> " + url);
         return personInfo;  // 正常访问
     }
 

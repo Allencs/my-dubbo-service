@@ -10,6 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * 1、maven中排除dubbo log4j的依赖
  * 2、运行时参数添加-Ddubbo.application.logger=slf4j
  * 3、springboot中无须额外添加依赖
+ *** Dubbo服务端
  */
 
 @SpringBootApplication

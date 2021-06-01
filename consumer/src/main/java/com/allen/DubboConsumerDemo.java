@@ -25,7 +25,10 @@ public class DubboConsumerDemo implements WebMvcConfigurer {
         ConfigurableApplicationContext context = SpringApplication.run(DubboConsumerDemo.class);
         DemoService demoService = context.getBean(DemoService.class);
 
-        System.out.println((demoService.sayHello("MyDubboService")));
+//        System.out.println(demoService.sayHello("MyDubboService"));
+
+        PersonInfo personInfo = demoService.getPersonInfo("TestDubbo", "JavaFactory", "Tester");
+        System.out.println("测试Dubbo服务：" + personInfo.getMessage());
     }
 
 }

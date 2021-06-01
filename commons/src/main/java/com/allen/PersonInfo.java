@@ -46,15 +46,15 @@ public class PersonInfo {
         this.message = messjob;
     }
 
-    @Override
-    public String toString() {
-        return "PersonInfo{" +
-                "name='" + name + '\'' +
-                ", job='" + job + '\'' +
-                ", company='" + company + '\'' +
-                ", message='" + message + '\'' +
-                ", code=" + code +
-                ", protocol='" + protocol + '\'' +
-                '}';
-    }
+//    @Override
+//    public String toString() {
+//        return "PersonInfo{" +
+//                "name='" + name + '\'' +
+//                ", job='" + job + '\'' +
+//                ", company='" + company + '\'' +
+//                ", message='" + message + '\'' +
+//                ", code=" + code +
+//                ", protocol='" + protocol + '\'' +
+//                '}';
+//    }
 }
