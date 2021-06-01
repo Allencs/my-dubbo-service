@@ -12,6 +12,7 @@
         <module>provider</module>
         <module>consumer</module>
         <module>interface</module>
+        <module>commons</module>
     </modules>
 
     <properties>

@@ -1,6 +1,7 @@
 package com.allen.provider.service;
 
 import com.allen.DemoService;
+import com.allen.PersonInfo;
 import org.apache.dubbo.common.URL;
 import org.apache.dubbo.config.annotation.Service;
 import org.apache.dubbo.rpc.RpcContext;
@@ -15,6 +16,11 @@ public class AsyncDemoService implements DemoService {
         System.out.println("执行了同步服务" + name);
         URL url = RpcContext.getContext().getUrl();
         return String.format("%s：%s, Hello, %s", url.getProtocol(), url.getPort(), name);  // 正常访问
+    }
+
+    @Override
+    public PersonInfo getPersonInfo(String name, String company, String job) {
+        return null;
     }
 
     @Override

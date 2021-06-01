@@ -27,6 +27,11 @@
       <artifactId>interface</artifactId>
       <version>1.0-SNAPSHOT</version>
     </dependency>
+    <dependency>
+      <groupId>com.allen</groupId>
+      <artifactId>commons</artifactId>
+      <version>1.0-SNAPSHOT</version>
+    </dependency>
     <!-- Dubbo Spring Boot Starter -->
     <dependency>
       <groupId>org.apache.dubbo</groupId>

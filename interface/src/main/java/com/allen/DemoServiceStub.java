@@ -19,4 +19,9 @@ public class DemoServiceStub implements com.allen.DemoService {
             return "容错数据";
         }
     }
+
+    @Override
+    public PersonInfo getPersonInfo(String name, String company, String job) {
+        return null;
+    }
 }

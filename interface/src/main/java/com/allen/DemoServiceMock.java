@@ -7,4 +7,9 @@ public class DemoServiceMock implements DemoService {
 
         return "出现Rpc异常，进行了mock";
     }
+
+    @Override
+    public PersonInfo getPersonInfo(String name, String company, String job) {
+        return null;
+    }
 }
