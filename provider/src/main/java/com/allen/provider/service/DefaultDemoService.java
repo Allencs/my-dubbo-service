@@ -38,6 +38,7 @@ public class DefaultDemoService implements DemoService {
         }
         URL url = RpcContext.getContext().getUrl();
         System.out.println("Request Url --> " + url);
+        logger.info(String.format("Name: %s - Job: %s - Company: %s", personInfo.getName(), personInfo.getJob(), personInfo.getCompany()));
         return personInfo;  // 正常访问
     }
 
