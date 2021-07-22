@@ -59,6 +59,10 @@
                         <groupId>log4j</groupId>
                         <artifactId>log4j</artifactId>
                     </exclusion>
+<!--                    <exclusion>-->
+<!--                        <groupId>org.apache.dubbo</groupId>-->
+<!--                        <artifactId>remoting</artifactId>-->
+<!--                    </exclusion>-->
                 </exclusions>
             </dependency>
         </dependencies>

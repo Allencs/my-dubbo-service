@@ -18,7 +18,7 @@ public class DubboConsumerDemo implements WebMvcConfigurer {
         registry.addInterceptor(new ConsumerInterceptor());
     }
 
-    @Reference(version = "default", loadbalance = "roundrobin")
+    @Reference(version = "1.0.0", loadbalance = "roundrobin")
     private DemoService demoService;
 
     public static void main(String[] args) throws IOException {

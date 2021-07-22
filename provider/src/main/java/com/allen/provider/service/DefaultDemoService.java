@@ -9,7 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 
-@Service(version = "default")
+@Service(version = "1.0.0", interfaceClass = com.allen.DemoService.class)
 public class DefaultDemoService implements DemoService {
 
     private final Logger logger = LoggerFactory.getLogger(DefaultDemoService.class);
