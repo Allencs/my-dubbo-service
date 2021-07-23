@@ -7,9 +7,11 @@ import org.apache.dubbo.config.annotation.Service;
 import org.apache.dubbo.rpc.RpcContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
 
 
-@Service(version = "1.0.0", interfaceClass = com.allen.DemoService.class)
+//@Service(version = "1.0.0", interfaceClass = com.allen.DemoService.class)
+@Component(value = "demoService")
 public class DefaultDemoService implements DemoService {
 
     private final Logger logger = LoggerFactory.getLogger(DefaultDemoService.class);
