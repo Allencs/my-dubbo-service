@@ -9,12 +9,11 @@
     <dubbo:application name="dubbo-demo-provider"/>
 
     <dubbo:config-center address="zookeeper://127.0.0.1:2181"/>
-    <dubbo:registry address="zookeeper://127.0.0.1:2181" />
-    <dubbo:metadata-report address="zookeeper://127.0.0.1:2181" />
+    <dubbo:registry address="zookeeper://127.0.0.1:2181"/>
+    <dubbo:metadata-report address="zookeeper://127.0.0.1:2181"/>
 
     <!-- use dubbo protocol to export service on port 20880 -->
     <dubbo:protocol name="dubbo" port="20881"/>
-
     <!-- service implementation, as same as regular local bean -->
     <!--<bean id="demoService" class="org.apache.dubbo.demo.impl.DemoServiceImpl"/>-->
     <!--<bean id="userService" class="org.apache.dubbo.demo.impl.UserServiceImpl"/>-->
