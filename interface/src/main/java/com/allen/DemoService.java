@@ -1,6 +1,8 @@
 package com.allen;
 
 
+import com.allen.model.PersonInfo;
+
 import java.util.concurrent.CompletableFuture;
 
 public interface DemoService {

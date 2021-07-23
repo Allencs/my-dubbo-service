@@ -1,7 +1,7 @@
 package com.allen.controller;
 
 import com.allen.DemoService;
-import com.allen.PersonInfo;
+import com.allen.model.PersonInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;

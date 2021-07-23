@@ -1,9 +1,8 @@
 package com.allen.provider.service;
 
 import com.allen.DemoService;
-import com.allen.PersonInfo;
+import com.allen.model.PersonInfo;
 import org.apache.dubbo.common.URL;
-import org.apache.dubbo.config.annotation.Service;
 import org.apache.dubbo.rpc.RpcContext;
 
 import java.util.concurrent.CompletableFuture;

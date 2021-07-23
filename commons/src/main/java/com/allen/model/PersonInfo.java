@@ -1,6 +1,8 @@
-package com.allen;
+package com.allen.model;
 
-public class PersonInfo {
+import java.io.Serializable;
+
+public class PersonInfo implements Serializable {
 
     private String name;
     private String job;

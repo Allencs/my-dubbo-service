@@ -1,5 +1,6 @@
 package com.allen;
 
+import com.allen.model.PersonInfo;
 import org.apache.dubbo.common.serialize.support.SerializationOptimizer;
 
 import java.util.Collection;

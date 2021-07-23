@@ -1,5 +1,7 @@
 package com.allen;
 
+import com.allen.model.PersonInfo;
+
 public class DemoServiceMock implements DemoService {
 
     @Override

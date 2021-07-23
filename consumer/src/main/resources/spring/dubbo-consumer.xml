@@ -21,7 +21,8 @@
     <!--<bean id="timeoutTestService" class="org.apache.dubbo.demo.impl.TimeoutTestServiceImpl"/>-->
     <!--<bean id="noResponseService" class="org.apache.dubbo.demo.impl.NoResponseServiceImpl"/>-->
 
-    <!-- declare the service interface to be exported -->
-    <dubbo:service interface="com.allen.DemoService" ref="demoService"/>
+    <!-- generate proxy for the remote service, then demoService can be used in the same way as the
+    local regular interface -->
+    <dubbo:reference id="demoService" check="false" interface="com.allen.DemoService"/>
 
 </beans>

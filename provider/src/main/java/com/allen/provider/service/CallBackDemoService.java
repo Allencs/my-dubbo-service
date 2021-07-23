@@ -2,7 +2,7 @@ package com.allen.provider.service;
 
 import com.allen.DemoService;
 import com.allen.DemoServiceListener;
-import com.allen.PersonInfo;
+import com.allen.model.PersonInfo;
 import org.apache.dubbo.common.URL;
 import org.apache.dubbo.rpc.RpcContext;
 

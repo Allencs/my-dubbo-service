@@ -1,16 +1,19 @@
 package com.allen;
 
 import com.allen.controller.ConsumerInterceptor;
+import com.allen.model.PersonInfo;
 import org.apache.dubbo.config.annotation.Reference;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.annotation.ImportResource;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
-
 import java.io.IOException;
 
 @SpringBootApplication
+@ImportResource("spring/dubbo-consumer.xml")
 public class DubboConsumerDemo implements WebMvcConfigurer {
 
     @Override
@@ -18,7 +21,8 @@ public class DubboConsumerDemo implements WebMvcConfigurer {
         registry.addInterceptor(new ConsumerInterceptor());
     }
 
-    @Reference(version = "1.0.0", loadbalance = "roundrobin")
+//    @Reference(version = "1.0.0", loadbalance = "roundrobin")
+    @Autowired
     private DemoService demoService;
 
     public static void main(String[] args) throws IOException {

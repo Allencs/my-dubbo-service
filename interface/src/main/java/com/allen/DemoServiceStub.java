@@ -1,5 +1,7 @@
 package com.allen;
 
+import com.allen.model.PersonInfo;
+
 public class DemoServiceStub implements com.allen.DemoService {
 
     private final com.allen.DemoService demoService;

@@ -2,6 +2,7 @@ package com.allen;
 
 import static org.junit.Assert.assertTrue;
 
+import com.allen.model.PersonInfo;
 import org.junit.Test;
 
 /**
