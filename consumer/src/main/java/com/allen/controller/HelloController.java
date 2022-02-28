@@ -15,8 +15,13 @@ public class HelloController {
     private DemoService demoService;
 
     @RequestMapping(value = "/consumer/user/say", method = RequestMethod.GET)
-    public DubboResponse sayHello(@RequestParam(value = "name") String name) {
+    public DubboResponse sayHello(@RequestParam(value = "name", defaultValue = "DubboConsumer-01") String name) {
         return demoService.sayHello(name);
+    }
+
+    @RequestMapping(value = "/health", method = RequestMethod.GET)
+    public DubboResponse getHealth() {
+        return demoService.health();
     }
 
     @RequestMapping(value = "/consumer/user/getPersonInfo", method = RequestMethod.POST)

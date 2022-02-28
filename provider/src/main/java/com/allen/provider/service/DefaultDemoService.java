@@ -60,7 +60,7 @@ public class DefaultDemoService implements DemoService {
     public DubboResponse health() {
         URL url = RpcContext.getContext().getUrl();
         DubboResponse response = new DubboResponse();
-        response.setCode("health");
+        response.setCode("healthy");
         response.setData("Dubbo Service: " + url);
         return response;
     }
