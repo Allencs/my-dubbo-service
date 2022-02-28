@@ -1,17 +1,16 @@
 package com.allen;
 
 import com.allen.controller.ConsumerInterceptor;
-import com.allen.model.PersonInfo;
-import org.apache.dubbo.config.annotation.Reference;
+import com.allen.dto.DubboResponse;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.ImportResource;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
-import java.io.IOException;
 
 @SpringBootApplication
+// xml配置dubbo时使用
 //@ImportResource("spring/dubbo-consumer.xml")
 public class DubboConsumerDemo implements WebMvcConfigurer {
 
@@ -20,16 +19,12 @@ public class DubboConsumerDemo implements WebMvcConfigurer {
         registry.addInterceptor(new ConsumerInterceptor());
     }
 
-//    @Reference(version = "1.0.0", loadbalance = "roundrobin")
-
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         ConfigurableApplicationContext context = SpringApplication.run(DubboConsumerDemo.class, args);
+        // dubbo服务健康检查
         DemoService demoService = context.getBean(DemoService.class);
-
-//        System.out.println(demoService.sayHello("MyDubboService"));
-
-        PersonInfo personInfo = demoService.getPersonInfo("TestDubbo", "JavaFactory", "Tester");
-        System.out.println("测试Dubbo服务：" + personInfo.getMessage());
+        DubboResponse response = demoService.health();
+        System.out.println("健康检查 ==> " + response.toString());
     }
 
 }

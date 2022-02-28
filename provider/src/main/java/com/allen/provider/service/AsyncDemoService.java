@@ -1,7 +1,7 @@
 package com.allen.provider.service;
 
 import com.allen.DemoService;
-import com.allen.model.PersonInfo;
+import com.allen.dto.DubboResponse;
 import org.apache.dubbo.common.URL;
 import org.apache.dubbo.rpc.RpcContext;
 
@@ -11,23 +11,29 @@ import java.util.concurrent.CompletableFuture;
 public class AsyncDemoService implements DemoService {
 
     @Override
-    public String sayHello(String name) {
+    public DubboResponse sayHello(String name) {
         System.out.println("执行了同步服务" + name);
         URL url = RpcContext.getContext().getUrl();
-        return String.format("%s：%s, Hello, %s", url.getProtocol(), url.getPort(), name);  // 正常访问
+        DubboResponse response = new DubboResponse();
+        response.setData(String.format("%s：%s, Hello, %s", url.getProtocol(), url.getPort(), name));
+        response.setCode("success");
+        return response;  // 正常访问
     }
 
     @Override
-    public PersonInfo getPersonInfo(String name, String company, String job) {
+    public DubboResponse getPersonInfo(String name, String company, String job) {
         return null;
     }
 
     @Override
-    public CompletableFuture<String> sayHelloAsync(String name) {
+    public DubboResponse health() {
+        return null;
+    }
+
+    @Override
+    public CompletableFuture<DubboResponse> sayHelloAsync(String name) {
         System.out.println("执行了异步服务" + name);
 
-        return CompletableFuture.supplyAsync(() -> {
-            return sayHello(name);
-        });
+        return CompletableFuture.supplyAsync(() -> sayHello(name));
     }
 }

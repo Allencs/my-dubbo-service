@@ -1,6 +1,7 @@
 package com.allen.provider.service;
 
 import com.allen.DemoService;
+import com.allen.dto.DubboResponse;
 import com.allen.model.PersonInfo;
 import org.apache.dubbo.common.URL;
 import org.apache.dubbo.rpc.RpcContext;
@@ -20,15 +21,22 @@ public class RestDemoService implements DemoService {
     @Path("say")
     @Produces({ContentType.APPLICATION_JSON_UTF_8, ContentType.TEXT_XML_UTF_8})
     @Override
-    public String sayHello(@QueryParam("name") String name) {
+    public DubboResponse sayHello(@QueryParam("name") String name) {
         System.out.println("执行了rest服务" + name);
-
         URL url = RpcContext.getContext().getUrl();
-        return String.format("%s: %s, Hello, %s", url.getProtocol(), url.getPort(), name);  // 正常访问
+        DubboResponse response = new DubboResponse();
+        response.setData(String.format("%s: %s, Hello, %s", url.getProtocol(), url.getPort(), name));
+        response.setCode("success");
+        return response;  // 正常访问
     }
 
     @Override
-    public PersonInfo getPersonInfo(String name, String company, String job) {
+    public DubboResponse getPersonInfo(String name, String company, String job) {
+        return null;
+    }
+
+    @Override
+    public DubboResponse health() {
         return null;
     }
 

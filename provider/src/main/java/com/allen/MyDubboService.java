@@ -1,7 +1,6 @@
 package com.allen;
 
 
-import org.apache.dubbo.config.spring.context.annotation.EnableDubbo;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ImportResource;
@@ -16,7 +15,8 @@ import org.springframework.context.annotation.ImportResource;
  */
 
 @SpringBootApplication
-@ImportResource("spring/dubbo-provider.xml")
+// xml配置dubbo时使用
+// @ImportResource("spring/dubbo-provider.xml")
 public class MyDubboService {
 
     public static void main(String[] args) {

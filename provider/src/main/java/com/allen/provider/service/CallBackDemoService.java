@@ -2,6 +2,7 @@ package com.allen.provider.service;
 
 import com.allen.DemoService;
 import com.allen.DemoServiceListener;
+import com.allen.dto.DubboResponse;
 import com.allen.model.PersonInfo;
 import org.apache.dubbo.common.URL;
 import org.apache.dubbo.rpc.RpcContext;
@@ -46,12 +47,17 @@ public class CallBackDemoService implements DemoService {
     }
 
     @Override
-    public String sayHello(String name) {
+    public DubboResponse sayHello(String name) {
         return null;
     }
 
     @Override
-    public PersonInfo getPersonInfo(String name, String company, String job) {
+    public DubboResponse getPersonInfo(String name, String company, String job) {
+        return null;
+    }
+
+    @Override
+    public DubboResponse health() {
         return null;
     }
 

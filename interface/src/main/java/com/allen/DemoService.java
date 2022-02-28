@@ -1,18 +1,21 @@
 package com.allen;
 
 
+import com.allen.dto.DubboResponse;
 import com.allen.model.PersonInfo;
 
 import java.util.concurrent.CompletableFuture;
 
 public interface DemoService {
     // 同步调用方法
-    String sayHello(String name);
+    DubboResponse sayHello(String name);
 
-    PersonInfo getPersonInfo(String name, String company, String job);
+    DubboResponse getPersonInfo(String name, String company, String job);
+
+    DubboResponse health();
 
     // 异步调用方法
-    default CompletableFuture<String> sayHelloAsync(String name) {
+    default CompletableFuture<DubboResponse> sayHelloAsync(String name) {
         return null;
     };
 

@@ -1,6 +1,5 @@
 package com.allen.consumer;
 
-import org.apache.dubbo.config.annotation.Reference;
 import org.apache.dubbo.rpc.service.GenericService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -12,7 +11,7 @@ import java.io.IOException;
 public class GenericDubboConsumerDemo {
 
 
-    @Reference(id = "demoService", version = "default", interfaceName = "com.allen.DemoService", generic = true)
+//    @Reference(id = "demoService", version = "default", interfaceName = "com.allen.DemoService", generic = true)
     private GenericService genericService;
 
     public static void main(String[] args) throws IOException {

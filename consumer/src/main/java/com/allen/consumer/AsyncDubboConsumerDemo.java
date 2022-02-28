@@ -1,6 +1,7 @@
 package com.allen.consumer;
 
 import com.allen.DemoService;
+import com.allen.dto.DubboResponse;
 import org.apache.dubbo.config.annotation.Reference;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -21,7 +22,7 @@ public class AsyncDubboConsumerDemo {
         DemoService demoService = context.getBean(DemoService.class);
 
         // 调用直接返回CompletableFuture
-        CompletableFuture<String> future = demoService.sayHelloAsync("异步调用");  // 5
+        CompletableFuture<DubboResponse> future = demoService.sayHelloAsync("异步调用");  // 5
 
         future.whenComplete((v, t) -> {
             if (t != null) {

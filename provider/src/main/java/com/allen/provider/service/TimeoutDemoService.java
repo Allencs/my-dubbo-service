@@ -1,18 +1,20 @@
 package com.allen.provider.service;
 
 import com.allen.DemoService;
+import com.allen.dto.DubboResponse;
 import com.allen.model.PersonInfo;
 import org.apache.dubbo.common.URL;
+import org.apache.dubbo.config.annotation.Service;
 import org.apache.dubbo.rpc.RpcContext;
 
 import java.util.concurrent.TimeUnit;
 
 
-//@Service(version = "timeout", timeout = 4000)
+@Service(version = "timeout", timeout = 4000)
 public class TimeoutDemoService implements DemoService {
 
     @Override
-    public String sayHello(String name) {
+    public DubboResponse sayHello(String name) {
         System.out.println("执行了timeout服务" + name);
 
         // 服务执行5秒
@@ -25,13 +27,21 @@ public class TimeoutDemoService implements DemoService {
         }
 
         System.out.println("执行结束" + name);
-
         URL url = RpcContext.getContext().getUrl();
-        return String.format("%s：%s, Hello, %s", url.getProtocol(), url.getPort(), name);  // 正常访问
+        DubboResponse response = new DubboResponse();
+        response.setData(String.format("%s：%s, Hello, %s", url.getProtocol(), url.getPort(), name));
+        response.setCode("success");
+        // 正常访问
+        return response;
     }
 
     @Override
-    public PersonInfo getPersonInfo(String name, String company, String job) {
+    public DubboResponse getPersonInfo(String name, String company, String job) {
+        return null;
+    }
+
+    @Override
+    public DubboResponse health() {
         return null;
     }
 
